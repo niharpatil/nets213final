@@ -1,0 +1,8 @@
+﻿Aggregation 3 Output,,,,
+Topic,A_predicted,B_predicted,Avg_Expected_A,Avg_Expected_B
+1,2,0,60,40
+2,1,1,45,55
+3,0,2,60,40
+4,2,0,50,50
+5,0,2,20,80
+6,1,1,62.5,37.5
