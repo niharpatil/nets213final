@@ -9,3 +9,6 @@ This hit is part of aggregating the possible subject areas from the first hit. W
 
 ## Hit 3:
 This is the hit for actually getting predictions from Turkers. Select the area which you feel you might have the most knowledge in and simply make your prediction for which outcome you believe is correct as well as suggesting the distribution of Turkers who will select each option.
+
+If there is a problem please contact any of the members of the group:
+Sean: swaxlenz@seas.upenn.edu
