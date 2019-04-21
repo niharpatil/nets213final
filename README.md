@@ -28,6 +28,8 @@ Back to HIT 1: we compile the Turker responses into a list of unique words submi
 
 We now need to determine which words listed represent the same high level topic. That is, turkers could list “soccer” and “futbol” and we need to verify that those are the same topic. 
 
+The code to move from hit 1 to hit 2 is called hit_1_to_hit2, and simply needs to be run with an outut from HIT 1 and receives clean data to be input into HIT 2.
+
 This will be done in two steps: using word2Vec and a second HIT (HIT 2). 
 
 # Quality Control of Topics (HIT 2)
