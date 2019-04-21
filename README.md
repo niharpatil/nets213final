@@ -18,18 +18,10 @@ We now need to determine which words listed represent the same high level topic.
 This will be done in two steps: using word2Vec and a second HIT (HIT 2). 
 
 # Quality Control of Topics (HIT 2)
-We will use word2Vec on our words from the first HIT to get some idea of their semantic meaning. We will then use k-means to cluster these into some amount of topics. Using this, we can hand label the topics. All of this code is 
-- Used for topics within HITS that cannot be easily grouped by word2vec and k-means
+We will use word2Vec on our words from the first HIT to get some idea of their semantic meaning. We will then use k-means to cluster these into some amount of topics. Using this, we can hand label the topics. All of this code is present in the word_topic_clustering file. The second HIT is for placing the words that we cannot describe with word2Vec into topics. This can occur in 2 main cases:
   - When the input has multiple words
   - When the input has a far distance from any topic centroid
-- Input for the hit would be the unknown topics and several well-known topics
-  - Then we take the cartesian product between the groups for each pair 
-  - And randomly give a subset of those pairs to turkers
-- Output would be for each pair a ranking from 1-3 of how related they are
-  - (not related, slightly related, strongly related)
-- We use output from the quality control to improve our overall 
-
-The code for this is given in Word Aggregation. It still needs to be updated to work more accurately, which we will do before the final project.
+We then use the second hit to place these HITS into a topic. The code for the using the output of this HIT is in the source folder.
 
 # Betting Based on Knowledge (Aggregation of votes) (HIT 3)
 
