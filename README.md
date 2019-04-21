@@ -24,7 +24,7 @@ The idea of this project is to first aggregate the knowledge of Turkers to see w
 
 The first HIT (HIT 1) asks Turkers to list up to 4 words that they are knowledgeable in, ordered from most knowledgeable to least knowledgeable. We are particular in this readme about the distinction between “words” and “topics. “Words” is what the Turkers submitted as their answers to HIT 1, while “topics” are the high level topics that they represent. This distinction is relevant, as potentially there could be some Turkers who list the word “soccer” and some who list the word “futbol”. These represent the same high level topic of American soccer/European futbol, but the words used to describe them are different. 
 
-Back to HIT 1: we compile the Turker responses into a list of unique words submitted by the Turkers, where each unique word has some notion of importance/relevance based on how many Turkers submitted it and where it fell in their list of 4 words. This is the first coding portion of the quality control module, which is found in the src folder as word_aggregation.
+Back to HIT 1: we compile the Turker responses into a list of unique words submitted by the Turkers, where each unique word has some notion of importance/relevance based on how many Turkers submitted it and where it fell in their list of 4 words. This is the first coding portion of the quality control module, which is found in the src folder as word_importance.
 
 We now need to determine which words listed represent the same high level topic. That is, turkers could list “soccer” and “futbol” and we need to verify that those are the same topic. 
 
@@ -36,7 +36,7 @@ This will be done in two steps: using word2Vec and a second HIT (HIT 2).
 We will use word2Vec on our words from the first HIT to get some idea of their semantic meaning. We will then use k-means to cluster these into some amount of topics. Using this, we can hand label the topics. All of this code is present in the word_topic_clustering file. The second HIT is for placing the words that we cannot describe with word2Vec into topics. This can occur in 2 main cases:
   - When the input has multiple words
   - When the input has a far distance from any topic centroid
-We then use the second hit to place these HITS into a topic. The code for the using the output of this HIT is in the source folder.
+We then use the second hit to place these HITS into a topic. The code for the using the output of this HIT is in the source folder. After this, we should have a topic labelling for the vast majority of words given in the output from HIT 1 (some may stil not fit into a topic). The code given in the src folder. After the result from this HIT, we now have accomplished our goal of getting a sense of how much the average turker knows about a wide variety of topics.
 
 # Betting Based on Knowledge (Aggregation of votes) (HIT 3)
 
