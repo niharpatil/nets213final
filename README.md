@@ -9,15 +9,16 @@ You must answer the last question.
 # Topic Aggregation/Quality Control (From HIT 1 to HIT 3)
 The idea of this project is to first aggregate the knowledge of Turkers to see what they have insight on, and then make predictions/bets based on their responses to questions in those topics. This first task consists of aggregating the knowledge of Turkers into a workable format. This task consists of two HITs and multiple coding portions. 
 
-The first HIT (HIT 1) asks Turkers to list up to 6 words that they are knowledgeable in, ordered from most knowledgeable to least knowledgeable. We are particular in this readme about the distinction between “words” and “topics. “Words” is what the Turkers submitted as their answers to HIT 1, while “topics” are the high level topics that they represent. This distinction is relevant, as potentially there could be some Turkers who list the word “soccer” and some who list the word “futbol”. These represent the same high level topic of American soccer/European futbol, but the words used to describe them are different. 
+The first HIT (HIT 1) asks Turkers to list up to 4 words that they are knowledgeable in, ordered from most knowledgeable to least knowledgeable. We are particular in this readme about the distinction between “words” and “topics. “Words” is what the Turkers submitted as their answers to HIT 1, while “topics” are the high level topics that they represent. This distinction is relevant, as potentially there could be some Turkers who list the word “soccer” and some who list the word “futbol”. These represent the same high level topic of American soccer/European futbol, but the words used to describe them are different. 
 
-Back to HIT 1: we compile the Turker responses into a list of unique words submitted by the Turkers, where each unique word has some notion of importance/relevance based on how many Turkers submitted it and where it fell in their list of 6 words. This is the first coding portion of the quality control module, which is found in the src folder as word_aggregation.
+Back to HIT 1: we compile the Turker responses into a list of unique words submitted by the Turkers, where each unique word has some notion of importance/relevance based on how many Turkers submitted it and where it fell in their list of 4 words. This is the first coding portion of the quality control module, which is found in the src folder as word_aggregation.
 
 We now need to determine which words listed represent the same high level topic. That is, turkers could list “soccer” and “futbol” and we need to verify that those are the same topic. 
 
 This will be done in two steps: using word2Vec and a second HIT (HIT 2). 
 
 # Quality Control of Topics (HIT 2)
+We will use word2Vec on our words from the first HIT to get some idea of their semantic meaning. We will then use k-means to cluster these into some amount of topics. Using this, we can hand label the topics. All of this code is 
 - Used for topics within HITS that cannot be easily grouped by word2vec and k-means
   - When the input has multiple words
   - When the input has a far distance from any topic centroid
