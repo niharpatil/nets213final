@@ -6,6 +6,9 @@ For each listed phrase, say which topic the phrase fits best into. In addition, 
 Answer each of the questions that are listed. If you don't feel comfortable saying yes, then you can just leave the question blank. 
 You must answer the last question.
 
+### First HIT
+The first HIT, our topic HIT, has already been completed on Mturk. We do not need additional data for this.
+
 # Topic Aggregation/Quality Control (From HIT 1 to HIT 3)
 The idea of this project is to first aggregate the knowledge of Turkers to see what they have insight on, and then make predictions/bets based on their responses to questions in those topics. This first task consists of aggregating the knowledge of Turkers into a workable format. This task consists of two HITs and multiple coding portions. 
 
